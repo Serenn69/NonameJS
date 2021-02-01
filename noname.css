@@ -1,0 +1,405 @@
+@font-face {
+    font-family: "Kemco Pixel";
+    src: url('fonts/Kemco Pixel Bold.ttf');
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-image: url("assets/background/game.png");
+    background-size: cover;
+}
+
+/* Div globale du jeu sur le navigateur, div des onglets verticaux et div des onglets horizontaux compris */
+#global {
+    width: 1000px;
+    height: 765px;
+    margin-top: 3%;
+    display: flex;
+}
+
+/* Div des Onglets verticaux à gauche */
+#verticalTabs {
+    width: 5%;
+    max-height: 100%;
+    padding-top: 9%;
+}
+
+#verticalTabs img {
+    width: 75%;
+}
+
+/* Onglets verticaux à gauche */
+#profilTab, #invTab, #settingsTab {
+    border: 1px solid black;
+    width: 100%;
+    height: 60px;
+    background-image: url("assets/background/onglet.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25% 0 0 25%;
+    cursor: pointer;
+}
+
+/* Div de jeu hors div des onglets verticaux */
+#center {
+    width: 100%;
+    height: 100%;
+}
+
+/* Bandeau en top récapitulatif des ressources possédées par le joueur */
+#resourcesTab {
+    border-top: 4px solid #5f5f5f;
+    border-left: 4px solid #5f5f5f;
+    border-right: 4px solid #5f5f5f;
+    border-radius: 20px 20px 0 0;
+    width: 99.07%;
+    height: 9%;
+    background-image: url("assets/background/stone2.png");
+    background-size: cover;
+}
+
+#resourcesTab td {
+    width: 3%;
+}
+
+#resourcesTab table {
+    margin: 0 0.5% 0 0.5%;
+}
+
+#resourcesTab img {
+    width: 95%;
+}
+
+#resourcesTab td input {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    margin-top: -2px;
+    width: 20px;
+}
+
+/* Div de la partie centrale du jeu, hors div du bandeau des ressources, div des onglets verticaux et div des onglets horizontaux */
+#game {
+    border-top: 6px solid #5f5f5f;
+    border-left: 4px solid #5f5f5f;
+    border-bottom: 4px solid #5f5f5f;
+    border-right: 4px solid #5f5f5f;
+    border-radius: 0 0 20px 20px;
+    width: 99.07%;
+    height: 83%;
+}
+
+/* Div des onglets horizontaux */
+#horizontalTabs {
+    width: 100%;
+    height: 6%;
+    display: flex;
+    justify-content: center;
+}
+
+#horizontalTabs img {
+    width: 45%;
+    height: 75%;
+}
+
+/* Onglets horizontaux */
+#gatherTab, #craftTab, #fightTab, #shopTab {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 15%;
+    height: 100%;
+    background-image: url("assets/background/onglet.jpg");
+    border-radius: 0 0 35% 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Background de la div d'accueil */
+#accueilBackDiv {
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/background/stone2.png");
+    background-size: 1860px;
+    border-radius: 0 0 15px 15px;
+    font-family: "Kemco Pixel", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 3em;
+    color: orange;
+    text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+
+/* Background de la div des récoltes */
+#gatherBackDiv {
+    width: 100%;
+    height: 70%;
+    background-image: url("assets/background/valley2.png");
+    background-size: cover;
+    border-bottom: 3px solid #5f5f5f
+}
+
+/* Div de la partie upgrade de la mine et de la forêt */
+#gatherUpgradeDiv {
+    width: 100%;
+    height: 29%;
+    background-image: url("assets/background/stone2.png");
+    background-size: 800px;
+    border-top: 3px solid #5f5f5f;
+    display: flex;
+    border-radius: 0 0 15px 15px;
+}
+
+/* Div upgrade de la mine, div upgrade de la forêt */
+#upgradeMetalDiv, #upgradeBoisDiv {
+    height: 100%;
+    font-family: "Kemco Pixel", serif;
+    margin-top: 1%;
+}
+
+#upgradeMetalDiv {
+    width: 51%;
+    margin-left: 1%;
+}
+
+#upgradeBoisDiv {
+    width: 48%;
+}
+
+#upgradeMetalDiv input, #upgradeBoisDiv input {
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#upgradeMetalDiv input[type="button"], #upgradeBoisDiv input[type="button"] {
+    background-color: #555555;
+    color: white;
+    border: 1px solid orange;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px black;
+    outline: none;
+    width: 95%;
+}
+
+span[data-descr] {
+    position: relative;
+    cursor: help;
+}
+
+span[data-descr]:hover::after {
+    content: attr(data-descr);
+    position: absolute;
+    left: 65px;
+    top: 16px;
+    min-width: auto;
+    border: 1px #aaaaaa solid;
+    border-radius: 10px;
+    background-color: #ffffcc;
+    padding: 12px;
+    color: #000000;
+    font-size: 14px;
+    z-index: 1;
+}
+
+#upgradeMetalDiv input[type="button"]:hover, #upgradeBoisDiv input[type="button"]:hover {
+    box-shadow: 0 3px black;
+    transform: translateY(1px);
+    border: 1px solid red;
+}
+
+#upgradeMetalDiv input[type="button"]:active, #upgradeBoisDiv input[type="button"]:active {
+    box-shadow: 0 0px black;
+    transform: translateY(4px);
+}
+
+/* Div centrale du craft, div centrale des combats */
+#allCraftsDiv, #allPathsDiv {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 15px 15px;
+    background-image: url("assets/background/stone2.png");
+    background-size: 1860px;
+}
+
+/* Div des menus déroulants de craft */
+#recipesDiv {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    border-bottom: 3px solid white;
+}
+
+/* Div de l'item choisi a craft */
+#itemsChoosenDiv {
+    width: 100%;
+    height: 34%;
+    display: flex;
+}
+
+/* Div des ressources nécessaires au craft */
+#resourcesInvDiv {
+    width: 100%;
+    height: 45%;
+    display: flex;
+    border-radius: 0 0 15px 15px;
+    border-top: 3px solid white;
+}
+
+#resourcesInvDiv input {
+    text-align: center;
+    font-weight: bolder;
+}
+
+#metalInvDiv, #boisInvDiv, #filInvDiv, #tissuInvDiv, #cuirInvDiv {
+    width: 20%;
+    font-family: "Kemco Pixel", serif;
+    padding-top: 5%;
+    padding-left: 5px;
+}
+
+#metalInvDiv, #boisInvDiv, #filInvDiv, #tissuInvDiv {
+    border-right: 3px solid white;
+}
+
+/* Div des recettes de craft, de la description de l'item choisi, des ressources nécessaires de la mine et de la forêt, du chemin des combats pour le fil et du chemin des combats pour les peaux */
+#recipesWeaponsDiv, #recipesArmorsDiv, #craftItemDescriptionDiv, #threadPathDiv, #hidePathDiv {
+    width: 50%;
+    height: 100%;
+}
+
+#recipesWeaponsDiv {
+    border-right: 3px solid white;
+}
+
+#recipesWeaponsDiv, #recipesArmorsDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#recipesWeaponsDiv select, #recipesArmorsDiv select {
+    font-family: "Kemco Pixel", serif;
+    font-size: 1em;
+    padding: 2px;
+    cursor: pointer;
+    box-shadow: 0 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    border: 2px solid black;
+    outline: none;
+}
+
+ /* Div de l'image de l'item choisi */
+#craftItemImageDiv {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#craftItemImageDiv img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: fill;
+}
+
+/* Div de la quantité d'item à craft */
+#craftItemQuantityDiv {
+    width: 15%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Kemco Pixel", serif;
+    border-right: 3px solid white;
+    color: #CCCCCC;
+}
+
+#craftItemQuantityDiv input {
+    text-align: center;
+    width: 5em;
+    font-weight: bolder;
+}
+
+#qtyCraftItemBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 7% 40%;
+    font-family: "Kemco Pixel", serif;
+    border: 2px outset black;
+    border-radius: 20px;
+    box-shadow: 0 6px black;
+    cursor: pointer;
+    outline: none;
+}
+
+#qtyCraftItemBtn:hover {
+    box-shadow: 0 4px black;
+    transform: translateY(2px);
+}
+
+#qtyCraftItemBtn:active {
+    box-shadow: 0 0 black;
+    transform: translateY(6px);
+}
+
+/* Div de description et des ressources nécessaires au craft */
+#craftItemDescriptionDiv {
+    border-right: 3px solid white;
+    padding: 0 10px 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-family: "Kemco Pixel", serif;
+    color: #CCCCCC;
+}
+
+.descri {
+    margin: 0 0 10px 0;
+}
+
+.needed {
+    margin: 15px 0 0 0;
+}
+
+#craftItemDescriptionDiv input {
+    text-align: center;
+    font-weight: bolder;
+}
+
+#threadPathDiv, #coton {
+    border-radius: 0 0 0 15px;
+}
+
+/* Div des ressources nécessaires de la mine */
+#hidePathDiv, #fragile {
+    border-radius: 0 0 15px 0;
+}
+
+/* Div des chemins de combat */
+#allPathsDiv {
+    display: flex;
+}
+
+/* Div des différentes ressources des chemins de combat */
+#spectral, #sylvestre, #soie, #laine, #coton, #ecailles, #robuste, #lourde, #legere, #fragile {
+    width: 100%;
+    height: 20%;
+}

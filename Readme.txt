@@ -9,8 +9,8 @@ Une part d'exp et de compétences du marchand est prévu ainsi que pour les comb
 
 Historique :
 
-20/01/2021 			: Lancement du projet
+20/01/2021 		: Lancement du projet
 21 & 22/01/2021 	: Recherche des icones, background, samples etc...
-23/01/2021 			: Début de la mise en forme de la page de récolte et codage des différentes onglets.
+23/01/2021 		: Début de la mise en forme de la page de récolte et codage des différentes onglets.
 24 au 27/01/2021 	: Création des images des armes et des armures.
 28 au 30/01/2021 	: Mise en forme de la page de craft.
